@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load custom_tags %}
+
+{% block additionalLinks %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" />
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}
+
+{% block title %}
+Ecomods - Inicio
+{% endblock %}
+
+{% block content %}
+<div class="Phones section">
+  <h1>Phones</h1>
+  <div class="image-text-container" data-url="{% url 'products' 'PN' %}">
+    <div class="image-stack">
+      {% for phone in products.modphone %}
+      <img data-url="{% url 'products' phone.id %}" src="{% static phone.media_path %}" alt="{{ phone.name }}"
+        id="{{ phone.name|get_id }}">
+      {% endfor %}
+    </div>
+    <div id="phoneDescription" class="image-description invisible">
+      <p>Los mejores teléfonos modulares de la serie Top, adaptados a tus necesidades.</p>
+    </div>
+  </div>
+</div>
+
+<div class="Tablets section">
+  <h1>Tablets</h1>
+  <div class="image-text-container" data-url="{% url 'products' 'TB' %}">
+    <div class="image-stack">
+      {% for tablet in products.modtab %}
+      <img data-url="{% url 'products' tablet.id %}" src="{% static tablet.media_path %}" alt="{{ tablet.name }}"
+        id="{{ tablet.name|get_id }}">
+      {% endfor %}
+    </div>
+    <div id="tabletDescription" class="image-description invisible">
+      <p>Explora nuestras tablets modulares de la serie Middle, la mejor opción para la productividad.</p>
+    </div>
+  </div>
+</div>
+
+<div class="Laptops section">
+  <h1>Laptops</h1>
+  <div class="image-text-container" data-url="{% url 'products' 'LP' %}">
+    <div class="image-stack">
+      {% for laptop in products.lapmod %}
+      <img data-url="{% url 'products' laptop.id %}" src="{% static laptop.media_path %}" alt="{{ laptop.name }}"
+        id="{{ laptop.name|get_id }}">
+      {% endfor %}
+    </div>
+    <div id="laptopDescription" class="image-description invisible">
+      <p>Nuestros portátiles modulares de la serie Bottom ofrecen potencia y flexibilidad.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
