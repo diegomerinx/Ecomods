@@ -11,7 +11,7 @@ h1 {
   -o-transition: fill var(--ease-time) ease;
   transition: fill var(--ease-time) ease;
   fill: var(--color07);
-  height: 3.75rem;
+  height: 3.5rem;
 }
 
 #shoping-cart:hover g,
@@ -363,6 +363,15 @@ nav {
 }
 
 @media (max-width: 768px) {
+
+  #shoping-cart,
+  #shoping-cart g,
+  #create,
+  #profile,
+  #icon {
+    height: 2.5rem;
+  }
+
   .profile-container .content input {
     font-size: 0.9rem;
   }
@@ -414,7 +423,7 @@ nav {
 
   #account-info,
   #account-options {
-    margin-top: calc(var(--navHeight) * 3.93);
+    margin-top: calc(var(--navHeight) * 3.03);
   }
 
   .show-profile {
