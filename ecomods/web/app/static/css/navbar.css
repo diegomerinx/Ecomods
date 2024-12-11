@@ -424,7 +424,9 @@ nav {
   #shoping-cart,
   #shoping-cart g,
   #create,
-  #profile{
+  #profile,
+  #icon{
+    margin-left: 0;
     height: 1.5rem;
     width: 1.5rem;
   }
@@ -444,7 +446,7 @@ nav {
 
   #account-info,
   #account-options {
-    margin-top: calc(var(--navHeight) * 3.65);
+    margin-top: calc(var(--navHeight) * 3.19);
   }
 
   .show-profile {
