@@ -363,13 +363,70 @@ nav {
 }
 
 @media (max-width: 768px) {
+  nav {
+    flex-direction: column;      
+    align-items: flex-start;     
+    padding: 0.625rem;
+    position: relative;          
+  }
+
+  .hamburger-menu {
+    display: flex;
+    position: absolute;
+    top: 0.9375rem;
+    right: 1.25rem;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .hamburger-menu span {
+    display: block;
+    width: 1.5625rem;
+    height: 0.1875rem;
+    background-color: var(--color07);
+    margin: 0.25rem 0;
+    transition: transform 0.3s ease;
+  }
+
+  .navbar {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;     
+    align-items: flex-start;    
+    justify-content: flex-start;
+    background-color: var(--color01);
+    width: 100%;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+    margin-bottom: 0.625rem;
+    padding: 0;                 
+  }
+
+  .navbar.active {
+    max-height: 31.25rem;
+  }
+
+  .navbar li {
+    text-align: left;           
+    width: 100%;                
+    margin: 0;                  
+  }
+
+  .navbar a {
+    text-align: left;           
+    width: 100%;                
+    display: block;             
+    margin: 0;                  
+    padding: 0.2rem;           
+  }
 
   #shoping-cart,
   #shoping-cart g,
   #create,
-  #profile,
-  #icon {
-    height: 2.5rem;
+  #profile{
+    height: 1.5rem;
+    width: 1.5rem;
   }
 
   .profile-container .content input {
@@ -385,45 +442,9 @@ nav {
     width: 50%;
   }
 
-  .hamburger-menu {
-    display: flex;
-  }
-
-  .navbar.dropdown {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--color01);
-    width: 100%;
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.5s ease;
-  }
-
-  .navbar.dropdown.active {
-    max-height: 31.25rem;
-  }
-
-  nav {
-    flex-direction: column;
-    padding: 0.625rem;
-    align-items: center;
-  }
-
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 0.625rem;
-  }
-
-  .navbar:first-of-type {
-    margin-bottom: 0.3125rem;
-  }
-
   #account-info,
   #account-options {
-    margin-top: calc(var(--navHeight) * 3.03);
+    margin-top: calc(var(--navHeight) * 3.65);
   }
 
   .show-profile {
