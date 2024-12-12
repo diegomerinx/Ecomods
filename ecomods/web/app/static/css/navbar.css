@@ -77,20 +77,19 @@ h1 {
 
 #account-info,
 #account-options {
+  position: absolute;
+  top: calc(100% - 1px);
+  right: calc(var(--contentPadding) - 10rem / 2); 
   z-index: 10000;
-  height: 0;
   overflow: hidden;
   visibility: hidden;
-  position: absolute;
   background-color: var(--color01);
   min-width: 10rem;
-  top: calc(var(--navHeight));
   transition: height var(--ease-time2) ease-in-out,
-    visibility var(--ease-time2) ease-in-out,
-    border-bottom var(--ease-time2) ease-in-out,
-    border-left var(--ease-time2) ease-in-out,
-    border-right var(--ease-time2) ease-in-out;
-  align-self: flex-start;
+              visibility var(--ease-time2) ease-in-out,
+              border-bottom var(--ease-time2) ease-in-out,
+              border-left var(--ease-time2) ease-in-out,
+              border-right var(--ease-time2) ease-in-out;
   border-bottom-left-radius: 0.625rem;
   border-bottom-right-radius: 0.625rem;
 }
@@ -166,6 +165,7 @@ input:-webkit-autofill {
 }
 
 nav {
+  position: relative;
   background-color: var(--color01);
   transition: border-bottom var(--ease-time) ease-in-out;
   min-height: var(--navHeight);
@@ -260,7 +260,7 @@ nav {
   flex-direction: column;
   width: 25vw;
   height: 75vh;
-  min-height: fit-content;
+  height: fit-content;
   background-color: var(--color01);
   color: var(--color07);
   border-radius: 0.625rem;
@@ -442,11 +442,6 @@ nav {
 
   .profile-container .profile {
     width: 50%;
-  }
-
-  #account-info,
-  #account-options {
-    margin-top: calc(var(--navHeight) * 3.19);
   }
 
   .show-profile {
