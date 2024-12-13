@@ -78,7 +78,7 @@ h1 {
 #account-info,
 #account-options {
   position: absolute;
-  top: calc(100% - 1px);
+  top: 100%;
   right: calc(var(--contentPadding) - 10rem / 2); 
   z-index: 10000;
   overflow: hidden;
@@ -363,6 +363,14 @@ nav {
 }
 
 @media (max-width: 768px) {
+
+  #account-info,
+  #account-options {
+    left: 0;  
+    right: auto;  
+    width: auto;  
+  }
+
   nav {
     flex-direction: column;      
     align-items: flex-start;     
