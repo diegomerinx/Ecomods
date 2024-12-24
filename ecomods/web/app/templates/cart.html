@@ -14,9 +14,9 @@
 {% block content %}
 <div class="cart-container">
   {% if cartProducts %}
-    <h1>
-      {% blocktrans %}CARRITO DE {{ user.first_name|upper }}{% endblocktrans %}
-    </h1>
+  <h1>
+    {% blocktrans with user_first_name=user.first_name|default:""|upper %}CARRITO DE {{ user_first_name }}{% endblocktrans %}
+  </h1>
     {% for cartProduct in cartProducts %}
       <div class="cart-item">
         <div class="product-details">

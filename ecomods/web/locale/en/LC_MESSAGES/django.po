@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-24 15:26+0000\n"
+"POT-Creation-Date: 2024-12-24 19:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: English <en@li.org>\n"
@@ -23,10 +23,14 @@ msgid "Cuenta registrada con éxito"
 msgstr "Account successfully registered"
 
 #: app/pipeline.py:33
-#, python-brace-format
+#, fuzzy, python-brace-format
+#| msgid ""
+#| "Hola {first_name} {last_name},\n"
+#| "Tu cuenta de EcoMods ha sido asociada "
 msgid ""
 "Hola {first_name} {last_name},\n"
-"Tu cuenta de EcoMods ha sido asociada "
+"Tu cuenta de EcoMods ha sido asociada al correo electrónico \"{email}\" "
+"exitosamente."
 msgstr ""
 "Hello {first_name} {last_name},\n"
 "Your EcoMods account has been linked "
@@ -141,7 +145,6 @@ msgid "Confirmación de Correo Electrónico"
 msgstr "Email Confirmation"
 
 #: app/templates/accounts/emailConfirmation.html:19
-#, python-format
 msgid ""
 "Se ha enviado un correo electrónico de confirmación a <a href=\"https://mail."
 "google.com/\" target=\"_blank\"><strong>%(email)s</strong></a>. Por favor, "
@@ -209,8 +212,8 @@ msgstr "My Cart"
 
 #: app/templates/cart.html:18
 #, python-format
-msgid "CARRITO DE %(user.first_name|upper)s"
-msgstr "CART OF %(user.first_name|upper)s"
+msgid "CARRITO DE %(user_first_name)s"
+msgstr "CART OF %(user_first_name)s"
 
 #: app/templates/cart.html:33
 msgid "DELETE"
@@ -232,21 +235,20 @@ msgstr "NO PRODUCTS IN THE CART"
 msgid "carrito vacio"
 msgstr "empty cart"
 
-#: app/templates/finalBuild/build.html:13
+#: app/templates/finalBuild/build.html:17
 msgid "Construcción"
 msgstr "Building"
 
-#: app/templates/finalBuild/build.html:19
-#, fuzzy, python-format
-#| msgid "Personaliza tu %(product.type.name)s %(product.name)s"
+#: app/templates/finalBuild/build.html:23
+#, python-format
 msgid "Personaliza tu %(type_name)s %(product_name)s"
-msgstr "Customize your %(product.type.name)s %(product.name)s"
+msgstr "Customize your %(type_name)s %(product_name)s"
 
-#: app/templates/finalBuild/build.html:48
+#: app/templates/finalBuild/build.html:52
 msgid "Añadir al carrito"
 msgstr "Add to Cart"
 
-#: app/templates/finalBuild/build.html:56
+#: app/templates/finalBuild/build.html:60
 msgid "Ir al carrito"
 msgstr "Go to Cart"
 
@@ -385,44 +387,44 @@ msgstr "Log In"
 msgid "Registrarse"
 msgstr "Register"
 
-#: app/templates/products.html:19
+#: app/templates/products.html:20
 #, python-format
 msgid "Nuestros %(type_name)ss"
 msgstr "Our %(type_name)ss"
 
-#: app/templates/products.html:24
+#: app/templates/products.html:25
 msgid "Cambiar Métrica"
 msgstr "Change Metric"
 
-#: app/templates/products.html:26
+#: app/templates/products.html:27
 msgid "SI (Europa)"
 msgstr "SI (Europe)"
 
-#: app/templates/products.html:27
+#: app/templates/products.html:28
 msgid "Imperial (América del Norte)"
 msgstr "Imperial (North America)"
 
-#: app/templates/products.html:40
+#: app/templates/products.html:41
 msgid "Largo del producto"
 msgstr "Product Length"
 
-#: app/templates/products.html:40
+#: app/templates/products.html:41
 msgid "Información sobre la longitud"
 msgstr "Information about the length"
 
-#: app/templates/products.html:49
+#: app/templates/products.html:50
 msgid "Alto del producto"
 msgstr "Product Height"
 
-#: app/templates/products.html:49
+#: app/templates/products.html:50
 msgid "Información sobre la altura"
 msgstr "Information about the height"
 
-#: app/templates/products.html:58
+#: app/templates/products.html:59
 msgid "Ancho del producto"
 msgstr "Product Width"
 
-#: app/templates/products.html:58
+#: app/templates/products.html:59
 msgid "Información sobre el ancho"
 msgstr "Information about the width"
 

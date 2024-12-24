@@ -1,11 +1,6 @@
-Below is a **sample `README.md`** in English for **Ecomods**, reflecting the updated context that your `Dockerfile`, `docker-compose.yml`, and `requirements.txt` are located in **`ecomods/web`** rather than the project’s root. It also provides **Windows-only** instructions:
-
----
-
 # Ecomods
 
-![Ecomods Banner](https://via.placeholder.com/2000x100 "Ecomods Banner")  
-*(Suggestion: Replace this placeholder with your own banner, e.g. `images/sponsors/sponsors.png`)*
+<img src="assets/banner.png" alt="Ecomods Banner" />
 
 **Ecomods** is an **e-commerce** web application built from the ground up **without any pre-made template**, offering a **fully responsive** design. Here, users can **build modular devices**—phones, tablets, and laptops—by adding or swapping modules (cameras, screens, keyboards, etc.). The entire application is custom-coded in **Django**, featuring:
 
@@ -14,6 +9,7 @@ Below is a **sample `README.md`** in English for **Ecomods**, reflecting the upd
 - **Secure authentication** (via email or Google OAuth2)  
 - **Custom `.env`** for sensitive credentials  
 - **Live demo** at [ecomods.pythonanywhere.com](https://ecomods.pythonanywhere.com)
+- **Demo Video**: [Watch the Ecomods Demo](https://www.youtube.com/watch?v=your_demo_video_link)
 
 ---
 
@@ -96,7 +92,13 @@ ecomods/
     │   └── ...
     ├── locale/
     │   ├── en/
+    │   │   └── LC_MESSAGES/
+    │   │       ├── django.po
+    │   │       └── djangojs.po
     │   └── es/
+    │       └── LC_MESSAGES/
+    │           ├── django.po
+    │           └── djangojs.po
     └── web/
         ├── settings.py
         ├── urls.py
@@ -109,15 +111,13 @@ ecomods/
 ## Screenshots
 
 1. **Home Page**  
-   ![Home Page](https://via.placeholder.com/800x400 "Home Page Example")
+   <img src="assets/home.png" alt="Home Page Example" width="800" />
 
 2. **Cart Page**  
-   ![Cart Page](https://via.placeholder.com/800x400 "Cart Page Example")
+   <img src="assets/cart.png" alt="Cart Page Example" width="800" />
 
 3. **Device Build Flow**  
-   ![Build Flow](https://via.placeholder.com/800x400 "Build Flow Example")
-
-*(Replace these placeholders with your real screenshots.)*
+   <img src="assets/build.png" alt="Build Flow Example" width="800" />
 
 ---
 
@@ -185,7 +185,7 @@ Below are **Windows-specific** instructions to run Ecomods locally or via Docker
 3. **Initialize the Database**  
    - Once containers are running, open PowerShell or CMD:
      ```powershell
-     docker exec -it web-web-1 powershell
+     docker exec -it web-web-1 bash
      python manage.py migrate
      python manage.py createsuperuser
      exit
@@ -213,4 +213,20 @@ Once the server (or Docker containers) is running:
 > **Instant Demo**: Try [ecomods.pythonanywhere.com](https://ecomods.pythonanywhere.com) without any local configuration.
 
 ---
+
+## Author & License
+
+**Ecomods** is developed by [Your Name](https://github.com/diegomerinx).  
+Licensed under the [MIT License](LICENSE).
+
+---
+
+## Demo Video
+
+Watch the **Ecomods Demo** to see the application in action:
+
+[![Watch Demo](assets/demo_thumbnail.png)](https://www.youtube.com/)
+
+---
+
 Enjoy **Ecomods**! If you have any issues or improvements, submit a pull request or contact us.

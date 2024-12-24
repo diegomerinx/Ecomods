@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Obtén las traducciones utilizando gettext
     var siText = gettext("SI (Europa)");
     var imperialText = gettext("Imperial (América del Norte)");
     var selectMetricText = gettext("Seleccionar medida");
@@ -8,13 +7,11 @@ document.addEventListener("DOMContentLoaded", function () {
     var optionsContainer = document.querySelector('.custom-options');
     var selectTrigger = selectCustom.querySelector('.select-custom-trigger');
 
-    // Configuración inicial
     selectTrigger.textContent = siText;
     selectTrigger.dataset.value = "SI";
     initializeValuesAndFetchConversionRate();
     handleMetricChange("SI");
 
-    // Maneja clics en el selector personalizado
     selectCustom.addEventListener('click', function (e) {
         var isOpen = selectCustom.classList.contains('open');
 
@@ -33,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function () {
         e.stopPropagation();
     });
 
-    // Configura opciones de selección
     var allOptions = document.querySelectorAll('.custom-option');
     allOptions.forEach(function (option) {
         option.addEventListener('click', function (e) {
@@ -48,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Cierra el selector si se hace clic fuera de él
     document.addEventListener('click', function (event) {
         if (!selectCustom.contains(event.target) && selectCustom.classList.contains('open')) {
             selectCustom.classList.remove('open');
@@ -56,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Redirige al hacer clic en un producto
     document.querySelectorAll('.product-item').forEach(function (priceElement) {
         priceElement.addEventListener('click', function () {
             var url = this.getAttribute('data-url');

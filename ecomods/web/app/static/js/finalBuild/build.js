@@ -47,7 +47,7 @@ function addToCart(product_name, product_type_id) {
 
   $.ajax({
     type: "POST",
-    url: "/addToCart/",
+    url: addToCartUrl,
     data: JSON.stringify({ name: product_name, type_id: product_type_id, modules: moduleIds, color: selectedColor }),
     contentType: "application/json",
     dataType: "json",
@@ -56,11 +56,11 @@ function addToCart(product_name, product_type_id) {
     },
     success: function (response) {
       console.log(response);
-      showPopup('Producto añadido al carrito con éxito.', true);
+      showPopup(gettext("Producto añadido al carrito con éxito."), true);
     },
     error: function (xhr, status, error) {
       console.error("Error en la solicitud:", error);
-      showPopup('Hubo un error al añadir el producto al carrito.', false);
+      showPopup( gettext("Hubo un error al añadir el producto al carrito."), false);
     }
   });
 }

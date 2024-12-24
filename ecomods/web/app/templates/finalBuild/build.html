@@ -5,8 +5,12 @@
 
 {% block additionalLinks %}
 <link rel="stylesheet" href="{% static 'css/finalBuild/build.css' %}" />
-<script src="{% static 'js/finalBuild/build.js' %}" defer></script>
+<script src="{% url 'javascript-catalog' %}?lang={{ LANGUAGE_CODE }}"></script>
 <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  const addToCartUrl = "{% url 'addToCart' %}";
+</script>
+<script src="{% static 'js/finalBuild/build.js' %}" defer></script>
 {% endblock %}
 
 {% block title %}

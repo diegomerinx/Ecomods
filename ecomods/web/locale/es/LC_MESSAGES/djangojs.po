@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-24 15:30+0000\n"
+"POT-Creation-Date: 2024-12-24 19:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,14 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
 "1 : 2;\n"
-#: app/static/js/products.js:3
+
+#: app/static/js/finalBuild/build.js:59
+msgid "Producto añadido al carrito con éxito."
+msgstr "Producto añadido al carrito con éxito."
+
+#: app/static/js/finalBuild/build.js:63
+msgid "Hubo un error al añadir el producto al carrito."
+msgstr "Hubo un error al añadir el producto al carrito."
+
+#: app/static/js/products.js:2
 msgid "SI (Europa)"
 msgstr "SI (Europa)"
 
-#: app/static/js/products.js:4
+#: app/static/js/products.js:3
 msgid "Imperial (América del Norte)"
 msgstr "Imperial (América del Norte)"
 
-#: app/static/js/products.js:5
+#: app/static/js/products.js:4
 msgid "Seleccionar medida"
 msgstr "Seleccionar medida"

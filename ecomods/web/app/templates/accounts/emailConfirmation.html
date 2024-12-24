@@ -16,7 +16,7 @@
 <div class="confirmation-container">
     <h2>{% trans "Confirmación de Correo Electrónico" %}</h2>
     <p>
-      {% blocktrans %}Se ha enviado un correo electrónico de confirmación a <a href="https://mail.google.com/" target="_blank"><strong>{{ email }}</strong></a>. Por favor, sigue las instrucciones en el correo para activar tu cuenta.{% endblocktrans %}
+      {% blocktrans with email=email|default:"" %}Se ha enviado un correo electrónico de confirmación a <a href="https://mail.google.com/" target="_blank"><strong>{{ email }}</strong></a>. Por favor, sigue las instrucciones en el correo para activar tu cuenta.{% endblocktrans %}
     </p>
     <button id="goToHomePage" data-url="{% url 'home' %}">{% trans "Ir a la Página Principal" %}</button>
 </div>
