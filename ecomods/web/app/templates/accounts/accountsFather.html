@@ -1,7 +1,8 @@
 {% load static %}
+{% load i18n %}
 
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{% get_current_language as current_language %}{{ current_language }}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,7 +18,7 @@
 
   <body>
     <div class="accountContainer">
-      <h1>ACCESO</h1>
+      <h1>{% trans "ACCESO" %}</h1>
       <div class="myForm">
         {% block accessMessage %}
         {% endblock %}
@@ -27,32 +28,45 @@
 
         {% block additionalLinks %}
         {% endblock %}
-        <a class="link" href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.GET.next|default:"/" }}">Iniciar sesión con Google</a>
+        <a class="link" href="{% url 'social:begin' 'google-oauth2' %}?next={{ request.GET.next|default:"/" }}">
+          {% trans "Iniciar sesión con Google" %}
+        </a>
       </div>
     </div>
     <div class="infoMessage">
-      <h1>Bienvenido/a a nuestro portal seguro</h1>
-      <p>En Ecomods, nos tomamos muy en serio la seguridad y privacidad de tu cuenta. Queremos recordarte la importancia de mantener tu información personal y tus contraseñas de forma confidencial. Tu seguridad es nuestra prioridad número uno.</p>
+      <h1>{% trans "Bienvenido/a a nuestro portal seguro" %}</h1>
+      <p>
+        {% trans "En Ecomods, nos tomamos muy en serio la seguridad y privacidad de tu cuenta. Queremos recordarte la importancia de mantener tu información personal y tus contraseñas de forma confidencial. Tu seguridad es nuestra prioridad número uno." %}
+      </p>
       <br />
-      <h2>¿Por qué es importante proteger tu contraseña?</h2>
-      <p>Tu contraseña es la llave que te da acceso a una experiencia segura y personalizada en nuestra plataforma. Proteger tu contraseña es fundamental para garantizar que solo tú, como propietario legítimo de la cuenta, puedas acceder a tu información, realizar transacciones y disfrutar de nuestros servicios.</p>
+      <h2>{% trans "¿Por qué es importante proteger tu contraseña?" %}</h2>
+      <p>
+        {% trans "Tu contraseña es la llave que te da acceso a una experiencia segura y personalizada en nuestra plataforma. Proteger tu contraseña es fundamental para garantizar que solo tú, como propietario legítimo de la cuenta, puedas acceder a tu información, realizar transacciones y disfrutar de nuestros servicios." %}
+      </p>
       <br />
-      <h2>Consejos para proteger tu cuenta:</h2>
+      <h2>{% trans "Consejos para proteger tu cuenta:" %}</h2>
       <ol>
         <li>
-          <strong>Contraseña robusta:</strong> Crea una contraseña única y compleja que combine letras, números y caracteres especiales. Evita usar información personal fácilmente accesible, como tu nombre o fecha de nacimiento.
+          <strong>{% trans "Contraseña robusta:" %}</strong>
+          {% trans "Crea una contraseña única y compleja que combine letras, números y caracteres especiales. Evita usar información personal fácilmente accesible, como tu nombre o fecha de nacimiento." %}
         </li>
         <li>
-          <strong>No compartas tu contraseña:</strong> Nunca compartas tu contraseña con nadie, incluso si parecen ser representantes legítimos de la plataforma. No solicitaremos tu contraseña por correo electrónico ni por ningún otro medio.
+          <strong>{% trans "No compartas tu contraseña:" %}</strong>
+          {% trans "Nunca compartas tu contraseña con nadie, incluso si parecen ser representantes legítimos de la plataforma. No solicitaremos tu contraseña por correo electrónico ni por ningún otro medio." %}
         </li>
         <li>
-          <strong>Inicio de sesión seguro:</strong> Asegúrate de acceder siempre a tu cuenta desde dispositivos seguros y redes confiables. Evita utilizar computadoras públicas o conexiones Wi-Fi no seguras.
+          <strong>{% trans "Inicio de sesión seguro:" %}</strong>
+          {% trans "Asegúrate de acceder siempre a tu cuenta desde dispositivos seguros y redes confiables. Evita utilizar computadoras públicas o conexiones Wi-Fi no seguras." %}
         </li>
       </ol>
       <br />
-      <p>Recuerda que Ecomods nunca te pedirá información confidencial por correo electrónico ni por mensajes. Si alguna vez tienes dudas sobre la autenticidad de una comunicación, contáctanos directamente a través de los canales oficiales.</p>
+      <p>
+        {% trans "Recuerda que Ecomods nunca te pedirá información confidencial por correo electrónico ni por mensajes. Si alguna vez tienes dudas sobre la autenticidad de una comunicación, contáctanos directamente a través de los canales oficiales." %}
+      </p>
       <br />
-      <p>Gracias por confiar en nosotros. Juntos, podemos mantener un entorno en línea seguro y protegido para todos nuestros usuarios.</p>
+      <p>
+        {% trans "Gracias por confiar en nosotros. Juntos, podemos mantener un entorno en línea seguro y protegido para todos nuestros usuarios." %}
+      </p>
     </div>
   </body>
 </html>

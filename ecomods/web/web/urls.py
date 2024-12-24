@@ -14,21 +14,22 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls.i18n import i18n_patterns
+from django.conf import settings
+from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include, re_path
 from app.views import *
-from django.conf import settings
-from django.conf.urls.static import static
-from django.contrib.auth import views as auth_views
-
+from django.views.i18n import JavaScriptCatalog
 
 urlpatterns = [
-    
-    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+    path('jsi18n/', JavaScriptCatalog.as_view(), name='javascript-catalog'),
     path('social-auth/', include('social_django.urls', namespace='social')),
-    
-    path('', home, name="home"),
+]
+
+urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls, name="admin"),
+    path('', home, name="home"),
 
     path('accounts/logIn/', logIn, name="logIn"),
     path('accounts/signUp/', signUp, name="signUp"),
@@ -46,6 +47,6 @@ urlpatterns = [
 
     path('productSelect/', productSelect, name='productSelect'),
     path('modelSelect/<str:id>', modelSelect, name='modelSelect'),
-    re_path(r'^finalBuild(?:/(?P<product_id>[^/]+))?(?:/(?P<modules>(?:[^/-]+(?:-[^/-]+)*)?))?(?:/(?P<color>[^/]+))?$', finalBuild, name="finalBuild"),
-
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    re_path(r'^finalBuild(?:/(?P<product_id>[^/]+))?(?:/(?P<modules>(?:[^/-]+(?:-[^/-]+)*)?))?(?:/(?P<color>[^/]+))?$',
+            finalBuild, name="finalBuild"),
+) + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
 {% load custom_tags %}
 
 {% block additionalLinks %}
 <link rel="stylesheet" href="{% static 'css/products.css' %}" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <script src="{% static 'js/products.js' %}" defer></script>
+<script src="{% url 'javascript-catalog' %}?lang={{ LANGUAGE_CODE }}"></script>
 {% endblock %}
 
 {% block title %}
@@ -14,14 +16,16 @@ Ecomods - {{ type.name }}
 
 {% block content %}
 <div id="all">
-  <h1 id="generation">Nuestros {{ type.name }}s</h1>
+  <h1 id="generation">
+    {% blocktrans with type_name=type.name %}Nuestros {{ type_name }}s{% endblocktrans %}
+  </h1>
   <img class="showcase" src="{% static type.gif_path %}" />
 
   <div class="select-custom">
-    <div class="select-custom-trigger">Cambiar Métrica</div>
+    <div class="select-custom-trigger">{% trans "Cambiar Métrica" %}</div>
     <div class="custom-options">
-      <span class="custom-option" data-value="SI">SI (Europa)</span>
-      <span class="custom-option" data-value="Imperial">Imperial (América del Norte)</span>
+      <span class="custom-option" data-value="SI">{% trans "SI (Europa)" %}</span>
+      <span class="custom-option" data-value="Imperial">{% trans "Imperial (América del Norte)" %}</span>
     </div>
   </div>
 
@@ -34,7 +38,7 @@ Ecomods - {{ type.name }}
         <div class="metric-item">
           <div class="metric-wrapper">
             <span class="metric" data-type="x">{{ product.x }} mm</span>
-            <span class="info-icon" data-tooltip="Largo del producto" aria-label="Información sobre la longitud" role="img">
+            <span class="info-icon" data-tooltip="{% trans 'Largo del producto' %}" aria-label="{% trans 'Información sobre la longitud' %}" role="img">
               <i class="fas fa-info-circle"></i>
             </span>
           </div>
@@ -43,7 +47,7 @@ Ecomods - {{ type.name }}
         <div class="metric-item">
           <div class="metric-wrapper">
             <span class="metric" data-type="y">{{ product.y }} mm</span>
-            <span class="info-icon" data-tooltip="Alto del producto" aria-label="Información sobre la altura" role="img">
+            <span class="info-icon" data-tooltip="{% trans 'Alto del producto' %}" aria-label="{% trans 'Información sobre la altura' %}" role="img">
               <i class="fas fa-info-circle"></i>
             </span>
           </div>
@@ -52,7 +56,7 @@ Ecomods - {{ type.name }}
         <div class="metric-item">
           <div class="metric-wrapper">
             <span class="metric" data-type="z">{{ product.z }} mm</span>
-            <span class="info-icon" data-tooltip="Ancho del producto" aria-label="Información sobre el ancho" role="img">
+            <span class="info-icon" data-tooltip="{% trans 'Ancho del producto' %}" aria-label="{% trans 'Información sobre el ancho' %}" role="img">
               <i class="fas fa-info-circle"></i>
             </span>
           </div>

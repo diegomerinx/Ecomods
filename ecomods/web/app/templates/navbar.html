@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <head>
   <link rel="stylesheet" href="{% static 'css/general.css' %}" />
@@ -18,13 +19,13 @@
       </a>
     </li>
     <li>
-      <a href="{% url 'products' 'PN' %}">Teléfonos</a>
+      <a href="{% url 'products' 'PN' %}">{% trans "Teléfonos" %}</a>
     </li>
     <li>
-      <a href="{% url 'products' 'TB' %}">Tablets</a>
+      <a href="{% url 'products' 'TB' %}">{% trans "Tablets" %}</a>
     </li>
     <li>
-      <a href="{% url 'products' 'LP' %}">Portatiles</a>
+      <a href="{% url 'products' 'LP' %}">{% trans "Portátiles" %}</a>
     </li>
   </ul>
   <ul class="navbar dropdown">
@@ -72,22 +73,22 @@
         <form method="post" action="{% url 'home' %}">
           {% csrf_token %}
           <div class="content">
-            <label for="username">Nombre de usuario:</label>
+            <label for="username">{% trans "Nombre de usuario:" %}</label>
             <input type="text" id="username" name="username" value="{{ user.username }}" required />
           </div>
           <div class="content">
-            <label for="email">Email:</label>
+            <label for="email">{% trans "Email:" %}</label>
             <input type="email" id="email" name="email" value="{{ user.email }}" required />
           </div>
           <div class="content">
-            <label for="first_name">Nombre:</label>
+            <label for="first_name">{% trans "Nombre:" %}</label>
             <input type="text" id="first_name" name="first_name" value="{{ user.first_name }}" required />
           </div>
           <div class="content">
-            <label for="last_name">Apellidos:</label>
+            <label for="last_name">{% trans "Apellidos:" %}</label>
             <input type="text" id="last_name" name="last_name" value="{{ user.last_name }}" required />
           </div>
-          <button type="submit" id="save">Guardar cambios</button>
+          <button type="submit" id="save">{% trans "Guardar cambios" %}</button>
         </form>
       </div>
       <div id="profile-pic-menu">
@@ -112,15 +113,15 @@
       <div id="account-info" class="account-dropdown-content">
         <ul>
           {% if request.user.first_name %}
-          <li>{{ request.user.first_name.upper }}</li>
+          <li>{{ request.user.first_name|upper }}</li>
           {% else %}
-          <li>{{ request.user.username.upper }}</li>
+          <li>{{ request.user.username|upper }}</li>
           {% endif %}
           <li>
-            <a href="">Ver mi perfil</a>
+            <a href="">{% trans "Ver mi perfil" %}</a>
           </li>
           <li>
-            <a href="{% url 'logOut' %}">Cerrar sesión</a>
+            <a href="{% url 'logOut' %}">{% trans "Cerrar sesión" %}</a>
           </li>
         </ul>
       </div>
@@ -128,10 +129,10 @@
       <div id="account-options" class="account-dropdown-content">
         <ul>
           <li>
-            <a href="{% url 'logIn' %}">Iniciar sesión</a>
+            <a href="{% url 'logIn' %}">{% trans "Iniciar sesión" %}</a>
           </li>
           <li>
-            <a href="{% url 'signUp' %}">Registrarse</a>
+            <a href="{% url 'signUp' %}">{% trans "Registrarse" %}</a>
           </li>
         </ul>
       </div>

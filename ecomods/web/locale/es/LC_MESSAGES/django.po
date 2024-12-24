@@ -1,0 +1,548 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-12-24 15:25+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Español <es@li.org>\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#: app/pipeline.py:31
+msgid "Cuenta registrada con éxito"
+msgstr "Cuenta registrada con éxito"
+
+#: app/pipeline.py:33
+#, python-brace-format
+msgid ""
+"Hola {first_name} {last_name},\n"
+"Tu cuenta de EcoMods ha sido asociada "
+msgstr ""
+"Hola {first_name} {last_name},\n"
+"Tu cuenta de EcoMods ha sido asociada "
+
+#: app/templates/accounts/accountsFather.html:21
+msgid "ACCESO"
+msgstr "ACCESO"
+
+#: app/templates/accounts/accountsFather.html:32
+msgid "Iniciar sesión con Google"
+msgstr "Iniciar sesión con Google"
+
+#: app/templates/accounts/accountsFather.html:37
+msgid "Bienvenido/a a nuestro portal seguro"
+msgstr "Bienvenido/a a nuestro portal seguro"
+
+#: app/templates/accounts/accountsFather.html:39
+msgid ""
+"En Ecomods, nos tomamos muy en serio la seguridad y privacidad de tu cuenta. "
+"Queremos recordarte la importancia de mantener tu información personal y tus "
+"contraseñas de forma confidencial. Tu seguridad es nuestra prioridad número "
+"uno."
+msgstr ""
+"En Ecomods, nos tomamos muy en serio la seguridad y privacidad de tu cuenta. "
+"Queremos recordarte la importancia de mantener tu información personal y tus "
+"contraseñas de forma confidencial. Tu seguridad es nuestra prioridad número "
+"uno."
+
+#: app/templates/accounts/accountsFather.html:42
+msgid "¿Por qué es importante proteger tu contraseña?"
+msgstr "¿Por qué es importante proteger tu contraseña?"
+
+#: app/templates/accounts/accountsFather.html:44
+msgid ""
+"Tu contraseña es la llave que te da acceso a una experiencia segura y "
+"personalizada en nuestra plataforma. Proteger tu contraseña es fundamental "
+"para garantizar que solo tú, como propietario legítimo de la cuenta, puedas "
+"acceder a tu información, realizar transacciones y disfrutar de nuestros "
+"servicios."
+msgstr ""
+"Tu contraseña es la llave que te da acceso a una experiencia segura y "
+"personalizada en nuestra plataforma. Proteger tu contraseña es fundamental "
+"para garantizar que solo tú, como propietario legítimo de la cuenta, puedas "
+"acceder a tu información, realizar transacciones y disfrutar de nuestros "
+"servicios."
+
+#: app/templates/accounts/accountsFather.html:47
+msgid "Consejos para proteger tu cuenta:"
+msgstr "Consejos para proteger tu cuenta:"
+
+#: app/templates/accounts/accountsFather.html:50
+msgid "Contraseña robusta:"
+msgstr "Contraseña robusta:"
+
+#: app/templates/accounts/accountsFather.html:51
+msgid ""
+"Crea una contraseña única y compleja que combine letras, números y "
+"caracteres especiales. Evita usar información personal fácilmente accesible, "
+"como tu nombre o fecha de nacimiento."
+msgstr ""
+"Crea una contraseña única y compleja que combine letras, números y "
+"caracteres especiales. Evita usar información personal fácilmente accesible, "
+"como tu nombre o fecha de nacimiento."
+
+#: app/templates/accounts/accountsFather.html:54
+msgid "No compartas tu contraseña:"
+msgstr "No compartas tu contraseña:"
+
+#: app/templates/accounts/accountsFather.html:55
+msgid ""
+"Nunca compartas tu contraseña con nadie, incluso si parecen ser "
+"representantes legítimos de la plataforma. No solicitaremos tu contraseña "
+"por correo electrónico ni por ningún otro medio."
+msgstr ""
+"Nunca compartas tu contraseña con nadie, incluso si parecen ser "
+"representantes legítimos de la plataforma. No solicitaremos tu contraseña "
+"por correo electrónico ni por ningún otro medio."
+
+#: app/templates/accounts/accountsFather.html:58
+msgid "Inicio de sesión seguro:"
+msgstr "Inicio de sesión seguro:"
+
+#: app/templates/accounts/accountsFather.html:59
+msgid ""
+"Asegúrate de acceder siempre a tu cuenta desde dispositivos seguros y redes "
+"confiables. Evita utilizar computadoras públicas o conexiones Wi-Fi no "
+"seguras."
+msgstr ""
+"Asegúrate de acceder siempre a tu cuenta desde dispositivos seguros y redes "
+"confiables. Evita utilizar computadoras públicas o conexiones Wi-Fi no "
+"seguras."
+
+#: app/templates/accounts/accountsFather.html:64
+msgid ""
+"Recuerda que Ecomods nunca te pedirá información confidencial por correo "
+"electrónico ni por mensajes. Si alguna vez tienes dudas sobre la "
+"autenticidad de una comunicación, contáctanos directamente a través de los "
+"canales oficiales."
+msgstr ""
+"Recuerda que Ecomods nunca te pedirá información confidencial por correo "
+"electrónico ni por mensajes. Si alguna vez tienes dudas sobre la "
+"autenticidad de una comunicación, contáctanos directamente a través de los "
+"canales oficiales."
+
+#: app/templates/accounts/accountsFather.html:68
+msgid ""
+"Gracias por confiar en nosotros. Juntos, podemos mantener un entorno en "
+"línea seguro y protegido para todos nuestros usuarios."
+msgstr ""
+"Gracias por confiar en nosotros. Juntos, podemos mantener un entorno en "
+"línea seguro y protegido para todos nuestros usuarios."
+
+#: app/templates/accounts/emailConfirmation.html:12
+#: app/templates/accounts/emailConfirmation.html:17
+msgid "Confirmación de Correo Electrónico"
+msgstr "Confirmación de Correo Electrónico"
+
+#: app/templates/accounts/emailConfirmation.html:19
+#, python-format
+msgid ""
+"Se ha enviado un correo electrónico de confirmación a <a href=\"https://mail."
+"google.com/\" target=\"_blank\"><strong>%(email)s</strong></a>. Por favor, "
+"sigue las instrucciones en el correo para activar tu cuenta."
+msgstr ""
+"Se ha enviado un correo electrónico de confirmación a <a href=\"https://mail."
+"google.com/\" target=\"_blank\"><strong>%(email)s</strong></a>. Por favor, "
+"sigue las instrucciones en el correo para activar tu cuenta."
+
+#: app/templates/accounts/emailConfirmation.html:21
+msgid "Ir a la Página Principal"
+msgstr "Ir a la Página Principal"
+
+#: app/templates/accounts/logIn.html:5
+msgid "Inicio de Sesión"
+msgstr "Inicio de Sesión"
+
+#: app/templates/accounts/logIn.html:9
+msgid "Introduce tus datos de acceso para acceder a tu cuenta"
+msgstr "Introduce tus datos de acceso para acceder a tu cuenta"
+
+#: app/templates/accounts/logIn.html:15 app/templates/accounts/signUp.html:15
+msgid "Nombre de Usuario"
+msgstr "Nombre de Usuario"
+
+#: app/templates/accounts/logIn.html:18 app/templates/accounts/signUp.html:21
+msgid "Contraseña"
+msgstr "Contraseña"
+
+#: app/templates/accounts/logIn.html:23
+msgid "Iniciar Sesión"
+msgstr "Iniciar Sesión"
+
+#: app/templates/accounts/logIn.html:29
+msgid "¿No tienes una cuenta? Date de alta aquí"
+msgstr "¿No tienes una cuenta? Date de alta aquí"
+
+#: app/templates/accounts/signUp.html:5
+msgid "Nueva Cuenta"
+msgstr "Nueva Cuenta"
+
+#: app/templates/accounts/signUp.html:9
+msgid "Introduce tus datos para crear una nueva cuenta"
+msgstr "Introduce tus datos para crear una nueva cuenta"
+
+#: app/templates/accounts/signUp.html:18
+msgid "Correo Electrónico"
+msgstr "Correo Electrónico"
+
+#: app/templates/accounts/signUp.html:24
+msgid "Confirmar Contraseña"
+msgstr "Confirmar Contraseña"
+
+#: app/templates/accounts/signUp.html:29
+msgid "Crear Cuenta"
+msgstr "Crear Cuenta"
+
+#: app/templates/accounts/signUp.html:34
+msgid "¿Ya tienes una cuenta? Inicia Sesión aquí"
+msgstr "¿Ya tienes una cuenta? Inicia Sesión aquí"
+
+#: app/templates/cart.html:11
+msgid "Mi Carrito"
+msgstr "Mi Carrito"
+
+#: app/templates/cart.html:18
+#, python-format
+msgid "CARRITO DE %(user.first_name|upper)s"
+msgstr "CARRITO DE %(user.first_name|upper)s"
+
+#: app/templates/cart.html:33
+msgid "DELETE"
+msgstr "DELETE"
+
+#: app/templates/cart.html:44
+msgid "No hay módulos asociados"
+msgstr "No hay módulos asociados"
+
+#: app/templates/cart.html:51
+msgid "Total"
+msgstr "Total"
+
+#: app/templates/cart.html:54
+msgid "SIN PRODUCTOS EN EL CARRITO"
+msgstr "SIN PRODUCTOS EN EL CARRITO"
+
+#: app/templates/cart.html:55
+msgid "carrito vacio"
+msgstr "carrito vacío"
+
+#: app/templates/finalBuild/build.html:13
+msgid "Construcción"
+msgstr "Construcción"
+
+#: app/templates/finalBuild/build.html:19
+#, fuzzy, python-format
+#| msgid "Personaliza tu %(product.type.name)s %(product.name)s"
+msgid "Personaliza tu %(type_name)s %(product_name)s"
+msgstr "Personaliza tu %(product.type.name)s %(product.name)s"
+
+#: app/templates/finalBuild/build.html:48
+msgid "Añadir al carrito"
+msgstr "Añadir al carrito"
+
+#: app/templates/finalBuild/build.html:56
+msgid "Ir al carrito"
+msgstr "Ir al carrito"
+
+#: app/templates/finalBuild/deviceSelection.html:12
+msgid "Selección de Dispositivos"
+msgstr "Selección de Dispositivos"
+
+#: app/templates/finalBuild/deviceSelection.html:17
+#: app/templates/finalBuild/modelSelection.html:17
+msgid "Elige el tipo de producto que desea construir"
+msgstr "Elige el tipo de producto que deseas construir"
+
+#: app/templates/finalBuild/modelSelection.html:12
+msgid "Selección de Módulos"
+msgstr "Selección de Módulos"
+
+#: app/templates/footer.html:11
+msgid "CONTACTO"
+msgstr "CONTACTO"
+
+#: app/templates/footer.html:12
+msgid "¿Tienes preguntas? Estamos aquí para ayudarte."
+msgstr "¿Tienes preguntas? Estamos aquí para ayudarte."
+
+#: app/templates/footer.html:43
+msgid "PATROCINADORES"
+msgstr "PATROCINADORES"
+
+#: app/templates/footer.html:44
+msgid "Orgullosos de ser apoyados por líderes en sostenibilidad y tecnología."
+msgstr "Orgullosos de ser apoyados por líderes en sostenibilidad y tecnología."
+
+#: app/templates/footer.html:53
+msgid "MÁS INFORMACIÓN"
+msgstr "MÁS INFORMACIÓN"
+
+#: app/templates/footer.html:56
+msgid "Sobre Nosotros"
+msgstr "Sobre Nosotros"
+
+#: app/templates/footer.html:59
+msgid "Compromiso Ecológico"
+msgstr "Compromiso Ecológico"
+
+#: app/templates/footer.html:62
+msgid "Blog de Innovación"
+msgstr "Blog de Innovación"
+
+#: app/templates/footer.html:65
+msgid "Política de Privacidad"
+msgstr "Política de Privacidad"
+
+#: app/templates/footer.html:68
+msgid "Términos y Condiciones"
+msgstr "Términos y Condiciones"
+
+#: app/templates/footer.html:74
+msgid "Todos los derechos reservados"
+msgstr "Todos los derechos reservados"
+
+#: app/templates/home.html:12
+msgid "Inicio"
+msgstr "Inicio"
+
+#: app/templates/home.html:17
+msgid "Phones"
+msgstr "Phones"
+
+#: app/templates/home.html:26
+msgid ""
+"Los mejores teléfonos modulares de la serie Top, adaptados a tus necesidades."
+msgstr ""
+"Los mejores teléfonos modulares de la serie Top, adaptados a tus necesidades."
+
+#: app/templates/home.html:32 app/templates/navbar.html:25
+msgid "Tablets"
+msgstr "Tablets"
+
+#: app/templates/home.html:41
+msgid ""
+"Explora nuestras tablets modulares de la serie Middle, la mejor opción para "
+"la productividad."
+msgstr ""
+"Explora nuestras tablets modulares de la serie Middle, la mejor opción para "
+"la productividad."
+
+#: app/templates/home.html:47
+msgid "Laptops"
+msgstr "Laptops"
+
+#: app/templates/home.html:56
+msgid ""
+"Nuestros portátiles modulares de la serie Bottom ofrecen potencia y "
+"flexibilidad."
+msgstr ""
+"Nuestros portátiles modulares de la serie Bottom ofrecen potencia y "
+"flexibilidad."
+
+#: app/templates/navbar.html:22
+msgid "Teléfonos"
+msgstr "Teléfonos"
+
+#: app/templates/navbar.html:28
+msgid "Portátiles"
+msgstr "Portátiles"
+
+#: app/templates/navbar.html:76
+msgid "Nombre de usuario:"
+msgstr "Nombre de usuario:"
+
+#: app/templates/navbar.html:80
+msgid "Email:"
+msgstr "Email:"
+
+#: app/templates/navbar.html:84
+msgid "Nombre:"
+msgstr "Nombre:"
+
+#: app/templates/navbar.html:88
+msgid "Apellidos:"
+msgstr "Apellidos:"
+
+#: app/templates/navbar.html:91
+msgid "Guardar cambios"
+msgstr "Guardar cambios"
+
+#: app/templates/navbar.html:121
+msgid "Ver mi perfil"
+msgstr "Ver mi perfil"
+
+#: app/templates/navbar.html:124
+msgid "Cerrar sesión"
+msgstr "Cerrar sesión"
+
+#: app/templates/navbar.html:132
+msgid "Iniciar sesión"
+msgstr "Iniciar sesión"
+
+#: app/templates/navbar.html:135
+msgid "Registrarse"
+msgstr "Registrarse"
+
+#: app/templates/products.html:19
+#, fuzzy, python-format
+#| msgid "Nuestros %(type.name)ss"
+msgid "Nuestros %(type_name)ss"
+msgstr "Nuestros %(type.name)ss"
+
+#: app/templates/products.html:24
+msgid "Cambiar Métrica"
+msgstr "Cambiar Métrica"
+
+#: app/templates/products.html:26
+msgid "SI (Europa)"
+msgstr "SI (Europa)"
+
+#: app/templates/products.html:27
+msgid "Imperial (América del Norte)"
+msgstr "Imperial (América del Norte)"
+
+#: app/templates/products.html:40
+msgid "Largo del producto"
+msgstr "Largo del producto"
+
+#: app/templates/products.html:40
+msgid "Información sobre la longitud"
+msgstr "Información sobre la longitud"
+
+#: app/templates/products.html:49
+msgid "Alto del producto"
+msgstr "Alto del producto"
+
+#: app/templates/products.html:49
+msgid "Información sobre la altura"
+msgstr "Información sobre la altura"
+
+#: app/templates/products.html:58
+msgid "Ancho del producto"
+msgstr "Ancho del producto"
+
+#: app/templates/products.html:58
+msgid "Información sobre el ancho"
+msgstr "Información sobre el ancho"
+
+#: app/views.py:73
+msgid "Credenciales inválidas"
+msgstr "Credenciales inválidas"
+
+#: app/views.py:91
+msgid "El correo electrónico debe ser de dominio @gmail.com o @opendeusto.es"
+msgstr "El correo electrónico debe ser de dominio @gmail.com o @opendeusto.es"
+
+#: app/views.py:94
+msgid "Las contraseñas deben coincidir"
+msgstr "Las contraseñas deben coincidir"
+
+#: app/views.py:118
+msgid ""
+"Este usuario ya está registrado. Inicia sesión con ese usuario, inicia "
+"sesión con google o utiliza otro nombre."
+msgstr ""
+"Este usuario ya está registrado. Inicia sesión con ese usuario, inicia "
+"sesión con Google o utiliza otro nombre."
+
+#: app/views.py:123
+msgid "Se ha producido un error cargando la URL"
+msgstr "Se ha producido un error cargando la URL"
+
+#: app/views.py:127
+#, python-brace-format
+msgid ""
+"Haz clic en el siguiente enlace para autenticar tu correo electrónico: {url}/"
+"authenticate/newUser?email={email}&token={token}&next={next}"
+msgstr ""
+"Haz clic en el siguiente enlace para autenticar tu correo electrónico: {url}/"
+"authenticate/newUser?email={email}&token={token}&next={next}"
+
+#: app/views.py:129
+#, python-brace-format
+msgid ""
+"Haz clic en el siguiente enlace para autenticar tu correo electrónico: {url}/"
+"authenticate/newUser?email={email}&token={token}"
+msgstr ""
+"Haz clic en el siguiente enlace para autenticar tu correo electrónico: {url}/"
+"authenticate/newUser?email={email}&token={token}"
+
+#: app/views.py:131
+msgid "Autenticación de Correo Electrónico"
+msgstr "Autenticación de Correo Electrónico"
+
+#: app/views.py:138
+msgid "Aviso de Intento de Autenticación de Correo Electrónico"
+msgstr "Aviso de Intento de Autenticación de Correo Electrónico"
+
+#: app/views.py:139
+#, python-brace-format
+msgid ""
+"Se está intentando autentificar el correo '{email}' a través del token "
+"'{token}'"
+msgstr ""
+"Se está intentando autentificar el correo '{email}' a través del token "
+"'{token}'"
+
+#: app/views.py:149
+msgid "Error de autenticación SMTP."
+msgstr "Error de autenticación SMTP."
+
+#: app/views.py:152
+msgid "El servidor SMTP rechazó la dirección del remitente."
+msgstr "El servidor SMTP rechazó la dirección del remitente."
+
+#: app/views.py:155
+msgid ""
+"El servidor SMTP rechazó una o más direcciones de correo electrónico de los "
+"destinatarios."
+msgstr ""
+"El servidor SMTP rechazó una o más direcciones de correo electrónico de los "
+"destinatarios."
+
+#: app/views.py:158
+msgid "Error de conexión al intentar conectar con el servidor SMTP."
+msgstr "Error de conexión al intentar conectar con el servidor SMTP."
+
+#: app/views.py:161
+msgid "Error al enviar el correo electrónico."
+msgstr "Error al enviar el correo electrónico."
+
+#: app/views.py:183
+msgid "El usuario que estás intentando autentificar no existe"
+msgstr "El usuario que estás intentando autentificar no existe"
+
+#: app/views.py:185
+msgid "No se ha podido autentificar tu dirección de correo electrónico"
+msgstr "No se ha podido autentificar tu dirección de correo electrónico"
+
+#: app/views.py:218
+msgid "No se proporcionó URL de imagen"
+msgstr "No se proporcionó URL de imagen"
+
+#: app/views.py:224
+msgid "Imagen actualizada correctamente"
+msgstr "Imagen actualizada correctamente"
+
+#: app/views.py:226
+msgid "Método no permitido"
+msgstr "Método no permitido"
+
+#: app/views.py:295 app/views.py:311
+msgid "Producto no encontrado"
+msgstr "Producto no encontrado"
+
+#: app/views.py:297 app/views.py:314
+msgid "Error eliminando el producto del carrito"
+msgstr "Error eliminando el producto del carrito"

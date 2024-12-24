@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
 {% load static %}
+{% load i18n %}
 
 {% block additionalLinks %}
   <link rel="stylesheet" href="{% static 'css/cart.css' %}" />
@@ -8,47 +8,51 @@
 {% endblock %}
 
 {% block title %}
-  Ecomods - Mi Carrito
+  Ecomods - {% trans "Mi Carrito" %}
 {% endblock %}
 
 {% block content %}
-  <div class="cart-container">
-    {% if cartProducts %}
-      <h1>CARRITO DE {{ user.first_name.upper }}</h1>
-      {% for cartProduct in cartProducts %}
-        <div class="cart-item">
-          <div class="product-details">
-            <img src="{% static cartProduct.product.media_path %}" alt="{{ cartProduct.product.name }}" />
-            <h2>{{ cartProduct.product.type.name }}</h2>
-            <p>{{ cartProduct.product.name }}</p>
-            <p>{{ cartProduct.product.price }}€</p>
-            <div class="quantity-control">
-              <button class="decrease-quantity" data-id="{{ cartProduct.id }}">-</button>
-              <p id="quantity-{{ cartProduct.id }}">{{ cartProduct.quantity }}</p>
-              <button class="increase-quantity" data-id="{{ cartProduct.id }}">+</button>
-            </div>
-            <button class="delete" data-id="{{ cartProduct.id }}">DELETE</button>
+<div class="cart-container">
+  {% if cartProducts %}
+    <h1>
+      {% blocktrans %}CARRITO DE {{ user.first_name|upper }}{% endblocktrans %}
+    </h1>
+    {% for cartProduct in cartProducts %}
+      <div class="cart-item">
+        <div class="product-details">
+          <img src="{% static cartProduct.product.media_path %}" alt="{{ cartProduct.product.name }}" />
+          <h2>{{ cartProduct.product.type.name }}</h2>
+          <p>{{ cartProduct.product.name }}</p>
+          <p>{{ cartProduct.product.price }}€</p>
+          <div class="quantity-control">
+            <button class="decrease-quantity" data-id="{{ cartProduct.id }}">-</button>
+            <p id="quantity-{{ cartProduct.id }}">{{ cartProduct.quantity }}</p>
+            <button class="increase-quantity" data-id="{{ cartProduct.id }}">+</button>
           </div>
-          <div class="module-details">
-            <ul>
-              {% for module in cartProduct.modules.all %}
-                <li>
-                  <img src="{% static module.media_path %}" alt="{{ module.name }}" class="module-image"/>
-                  <span class="module-price">{{ module.price }}€</span>
-                </li>
-              {% empty %}
-                <li>No hay módulos asociados</li>
-              {% endfor %}
-            </ul>
-          </div>
+          <button class="delete" data-id="{{ cartProduct.id }}">
+            {% trans "DELETE" %}
+          </button>
         </div>
-      {% endfor %}
-      <div id="totalPriceContainer">
-        <p id="totalPrice">Total: {{ totalPrice }} €</p>
+        <div class="module-details">
+          <ul>
+            {% for module in cartProduct.modules.all %}
+              <li>
+                <img src="{% static module.media_path %}" alt="{{ module.name }}" class="module-image"/>
+                <span class="module-price">{{ module.price }}€</span>
+              </li>
+            {% empty %}
+              <li>{% trans "No hay módulos asociados" %}</li>
+            {% endfor %}
+          </ul>
+        </div>
       </div>
-    {% else %}
-      <h1>SIN PRODUCTOS EN EL CARRITO</h1>
-      <img id="cart" src="{% static 'images/empty-cart.png' %}" alt="carrito vacio" />
-    {% endif %}
-  </div>
+    {% endfor %}
+    <div id="totalPriceContainer">
+      <p id="totalPrice">{% trans "Total" %}: {{ totalPrice }} €</p>
+    </div>
+  {% else %}
+    <h1>{% trans "SIN PRODUCTOS EN EL CARRITO" %}</h1>
+    <img id="cart" src="{% static 'images/empty-cart.png' %}" alt="{% trans 'carrito vacio' %}" />
+  {% endif %}
+</div>
 {% endblock %}

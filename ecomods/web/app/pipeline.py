@@ -2,6 +2,7 @@ from django.core.mail import send_mail, BadHeaderError
 from smtplib import SMTPException
 from django.contrib.auth.models import User
 from .models import Client
+from django.utils.translation import gettext as _ 
 
 def create_user_by_email(strategy, backend, details, response, user=None, *args, **kwargs):
     email = kwargs.get('email') or details.get('email')
@@ -27,8 +28,12 @@ def create_user_by_email(strategy, backend, details, response, user=None, *args,
 
         try:
             send_mail(
-                subject="Cuenta registrada con éxito",
-                message=f"Hola {first_name} {last_name},\nTu cuenta de EcoMods ha sido asociada al correo electrónico \"{email}\" exitosamente.",
+                subject=_("Cuenta registrada con éxito"),
+                message=_(
+                    f"Hola {first_name} {last_name},\n"
+                    "Tu cuenta de EcoMods ha sido asociada "
+                    f"al correo electrónico \"{email}\" exitosamente."
+                ),
                 from_email="ecomodstechnology@gmail.com",
                 recipient_list=[email],
                 fail_silently=False

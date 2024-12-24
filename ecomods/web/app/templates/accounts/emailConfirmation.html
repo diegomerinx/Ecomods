@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
 {% load static %}
+{% load i18n %}
 
 {% block additionalLinks %}
   <link rel="stylesheet" href="{% static 'css/general.css' %}">
@@ -9,13 +9,15 @@
 {% endblock %}
 
 {% block title %}
-    Confirmación de Correo Electrónico
+    {% trans "Confirmación de Correo Electrónico" %}
 {% endblock %}
 
 {% block content %}
-  <div class="confirmation-container">
-      <h2>Confirmación de Correo Electrónico</h2>
-      <p>Se ha enviado un correo electrónico de confirmación a <a href="https://mail.google.com/" target="_blank"><strong>{{ email }}</strong></a>. Por favor, sigue las instrucciones en el correo para activar tu cuenta.</p>
-      <button id="goToHomePage" data-url="{% url 'home' %}">Ir a la Página Principal</button>
-  </div>
+<div class="confirmation-container">
+    <h2>{% trans "Confirmación de Correo Electrónico" %}</h2>
+    <p>
+      {% blocktrans %}Se ha enviado un correo electrónico de confirmación a <a href="https://mail.google.com/" target="_blank"><strong>{{ email }}</strong></a>. Por favor, sigue las instrucciones en el correo para activar tu cuenta.{% endblocktrans %}
+    </p>
+    <button id="goToHomePage" data-url="{% url 'home' %}">{% trans "Ir a la Página Principal" %}</button>
+</div>
 {% endblock %}

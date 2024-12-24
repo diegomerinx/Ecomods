@@ -1,20 +1,27 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
+    // Obtén las traducciones utilizando gettext
+    var siText = gettext("SI (Europa)");
+    var imperialText = gettext("Imperial (América del Norte)");
+    var selectMetricText = gettext("Seleccionar medida");
+
     var selectCustom = document.querySelector('.select-custom');
     var optionsContainer = document.querySelector('.custom-options');
     var selectTrigger = selectCustom.querySelector('.select-custom-trigger');
 
-    selectTrigger.textContent = "SI (Europa)";
+    // Configuración inicial
+    selectTrigger.textContent = siText;
     selectTrigger.dataset.value = "SI";
     initializeValuesAndFetchConversionRate();
     handleMetricChange("SI");
 
-    selectCustom.addEventListener('click', function(e) {
+    // Maneja clics en el selector personalizado
+    selectCustom.addEventListener('click', function (e) {
         var isOpen = selectCustom.classList.contains('open');
-        
+
         if (!isOpen) {
-            fadeText(selectTrigger, "Seleccionar medida");
+            fadeText(selectTrigger, selectMetricText);
         } else {
-            restoreSelectedText(selectTrigger); // Pasa selectTrigger como parámetro
+            restoreSelectedText(selectTrigger, siText, imperialText);
         }
 
         selectCustom.classList.toggle('open', !isOpen);
@@ -26,10 +33,11 @@ document.addEventListener("DOMContentLoaded", function() {
         e.stopPropagation();
     });
 
+    // Configura opciones de selección
     var allOptions = document.querySelectorAll('.custom-option');
-    allOptions.forEach(function(option) {
-        option.addEventListener('click', function(e) {
-            var selectedText = this.textContent;
+    allOptions.forEach(function (option) {
+        option.addEventListener('click', function (e) {
+            var selectedText = this.dataset.value === "SI" ? siText : imperialText;
             selectTrigger.dataset.value = this.dataset.value;
 
             fadeText(selectTrigger, selectedText);
@@ -40,33 +48,35 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    document.addEventListener('click', function(event) {
+    // Cierra el selector si se hace clic fuera de él
+    document.addEventListener('click', function (event) {
         if (!selectCustom.contains(event.target) && selectCustom.classList.contains('open')) {
             selectCustom.classList.remove('open');
-            restoreSelectedText(selectTrigger);
+            restoreSelectedText(selectTrigger, siText, imperialText);
         }
     });
 
-    document.querySelectorAll('.product-item').forEach(function(priceElement) {
-        priceElement.addEventListener('click', function() {
+    // Redirige al hacer clic en un producto
+    document.querySelectorAll('.product-item').forEach(function (priceElement) {
+        priceElement.addEventListener('click', function () {
             var url = this.getAttribute('data-url');
             window.location.href = url;
         });
     });
 });
 
-function restoreSelectedText(selectTrigger) {
+function restoreSelectedText(selectTrigger, siText, imperialText) {
     var selectedValue = selectTrigger.dataset.value;
-    var restoredText = selectedValue === "SI" ? "SI (Europa)" : "Imperial (América del Norte)";
+    var restoredText = selectedValue === "SI" ? siText : imperialText;
     fadeText(selectTrigger, restoredText);
 }
 
 function fadeText(element, newText) {
     element.classList.add('hidden');
-    setTimeout(function() {
+    setTimeout(function () {
         element.textContent = newText;
         element.classList.remove('hidden');
-    }, 250); 
+    }, 250);
 }
 
 function scrollToSelectCustom() {
@@ -74,23 +84,23 @@ function scrollToSelectCustom() {
     if (selectCustom) {
         var rect = selectCustom.getBoundingClientRect();
         var windowHeight = window.innerHeight;
-        
+
         if (rect.bottom > windowHeight * 0.65) {
             var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            var offsetTop = rect.top + scrollTop - 20;  
+            var offsetTop = rect.top + scrollTop - 20;
             window.scrollTo({ top: offsetTop, behavior: 'smooth' });
         }
     }
 }
 
-var conversionRate = 1; 
+var conversionRate = 1;
 var originalPrices = [];
 var originalMetrics = [];
 
 function initializeValuesAndFetchConversionRate() {
     var currencies = document.getElementsByClassName("currency");
     var metrics = document.getElementsByClassName("metric");
-    
+
     for (var i = 0; i < currencies.length; i++) {
         originalPrices.push(parseFloat(currencies[i].innerText.split(" ")[0].replace(",", ".")));
     }

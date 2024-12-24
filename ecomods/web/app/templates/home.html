@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-
 {% load static %}
+{% load i18n %}
 {% load custom_tags %}
 
 {% block additionalLinks %}
@@ -9,12 +9,12 @@
 {% endblock %}
 
 {% block title %}
-Ecomods - Inicio
+Ecomods - {% trans "Inicio" %}
 {% endblock %}
 
 {% block content %}
 <div class="Phones section">
-  <h1>Phones</h1>
+  <h1>{% trans "Phones" %}</h1>
   <div class="image-text-container" data-url="{% url 'products' 'PN' %}">
     <div class="image-stack">
       {% for phone in products.modphone %}
@@ -23,13 +23,13 @@ Ecomods - Inicio
       {% endfor %}
     </div>
     <div id="phoneDescription" class="image-description invisible">
-      <p>Los mejores teléfonos modulares de la serie Top, adaptados a tus necesidades.</p>
+      <p>{% trans "Los mejores teléfonos modulares de la serie Top, adaptados a tus necesidades." %}</p>
     </div>
   </div>
 </div>
 
 <div class="Tablets section">
-  <h1>Tablets</h1>
+  <h1>{% trans "Tablets" %}</h1>
   <div class="image-text-container" data-url="{% url 'products' 'TB' %}">
     <div class="image-stack">
       {% for tablet in products.modtab %}
@@ -38,13 +38,13 @@ Ecomods - Inicio
       {% endfor %}
     </div>
     <div id="tabletDescription" class="image-description invisible">
-      <p>Explora nuestras tablets modulares de la serie Middle, la mejor opción para la productividad.</p>
+      <p>{% trans "Explora nuestras tablets modulares de la serie Middle, la mejor opción para la productividad." %}</p>
     </div>
   </div>
 </div>
 
 <div class="Laptops section">
-  <h1>Laptops</h1>
+  <h1>{% trans "Laptops" %}</h1>
   <div class="image-text-container" data-url="{% url 'products' 'LP' %}">
     <div class="image-stack">
       {% for laptop in products.lapmod %}
@@ -53,7 +53,7 @@ Ecomods - Inicio
       {% endfor %}
     </div>
     <div id="laptopDescription" class="image-description invisible">
-      <p>Nuestros portátiles modulares de la serie Bottom ofrecen potencia y flexibilidad.</p>
+      <p>{% trans "Nuestros portátiles modulares de la serie Bottom ofrecen potencia y flexibilidad." %}</p>
     </div>
   </div>
 </div>

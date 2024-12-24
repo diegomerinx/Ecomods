@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
-
 {% load static %}
 {% load custom_tags %}
+{% load i18n %}
 
 {% block additionalLinks %}
 <link rel="stylesheet" href="{% static 'css/finalBuild/build.css' %}" />
@@ -10,12 +10,14 @@
 {% endblock %}
 
 {% block title %}
-Ecomods - Construcción
+Ecomods - {% trans "Construcción" %}
 {% endblock %}
 
 {% block content %}
 <main>
-  <h2 class="info">Personaliza tu {{ product.type.name }} {{ product.name }}</h2>
+  <h2 class="info">
+    {% blocktrans with type_name=product.type.name product_name=product.name %}Personaliza tu {{ type_name }} {{ product_name }}{% endblocktrans %}
+  </h2>
   <div class="selection-wrapper">
     <img
       id="deviceImage"
@@ -43,7 +45,7 @@ Ecomods - Construcción
       onclick="addToCart('{{ product.name }}', '{{ product.type.id }}')"
       data-url="{% url 'addToCart' %}"
     >
-      Añadir al carrito
+      {% trans "Añadir al carrito" %}
     </button>
   </div>
 
@@ -51,7 +53,7 @@ Ecomods - Construcción
     <div class="popup-content">
       <p id="popupMessage"></p>
       <div id="popupButtons" class="popup-buttons">
-        <button onclick="goToCart()">Ir al carrito</button>
+        <button onclick="goToCart()">{% trans "Ir al carrito" %}</button>
       </div>
     </div>
   </div>

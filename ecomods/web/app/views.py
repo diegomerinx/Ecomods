@@ -17,12 +17,11 @@ from app.templatetags.custom_tags import *
 from app.models import Product, compatibleModules
 from django.http import JsonResponse
 from django.db import transaction
-from django.core.exceptions import ImproperlyConfigured
 from app import utils
+from django.utils.translation import gettext as _
 
 def isUserAuthenticated(user):
     return user.is_authenticated
-
 
 def home(request):
     if request.method == "GET":
@@ -71,13 +70,11 @@ def logIn(request):
             else:
                 return redirect("home")
         else:
-            return render(request, "accounts/logIn.html", {"errorMessage": "Credenciales inválidas"})
-
+            return render(request, "accounts/logIn.html", {"errorMessage": _("Credenciales inválidas")})
 
 def logOut(request):
     logout(request)
     return redirect("home")
-
 
 def signUp(request):
     if request.method == "GET":
@@ -91,10 +88,10 @@ def signUp(request):
         confirm_password = request.POST["confirmPassword"]
 
         if not email.endswith("@gmail.com") and not email.endswith("@opendeusto.es"):
-            return render(request, "accounts/signUp.html", {"errorMessage": "El correo electrónico debe ser de dominio @gmail.com o @opendeusto.es"})
+            return render(request, "accounts/signUp.html", {"errorMessage": _("El correo electrónico debe ser de dominio @gmail.com o @opendeusto.es")})
 
         if password != confirm_password:
-            return render(request, "accounts/signUp.html", {"errorMessage": "Las contraseñas deben coincidir"})
+            return render(request, "accounts/signUp.html", {"errorMessage": _("Las contraseñas deben coincidir")})
 
         token = get_random_string(length=20)
         try:
@@ -118,28 +115,28 @@ def signUp(request):
                 existing_client.token = token
                 existing_client.save()
             else:
-                return render(request, "accounts/signUp.html", {"errorMessage": "Este usuario ya está registrado. Inicia sesión con ese usuario, inicia sesión con google o utiliza otro nombre."})
+                return render(request, "accounts/signUp.html", {"errorMessage": _("Este usuario ya está registrado. Inicia sesión con ese usuario, inicia sesión con google o utiliza otro nombre.")})
 
         url = getURL(request)
         if url is None:
             print("Error cargando la URL del usuario")
-            return render(request, "accounts/signUp.html", {"errorMessage": "Se ha producido un error cargando la URL"})
+            return render(request, "accounts/signUp.html", {"errorMessage": _("Se ha producido un error cargando la URL")})
 
         try:
             if next:
-                message = f"Haz clic en el siguiente enlace para autenticar tu correo electrónico: {url}/authenticate/newUser?email={email}&token={token}&next={next}"
+                message = _(f"Haz clic en el siguiente enlace para autenticar tu correo electrónico: {url}/authenticate/newUser?email={email}&token={token}&next={next}")
             else:
-                message = f"Haz clic en el siguiente enlace para autenticar tu correo electrónico: {url}/authenticate/newUser?email={email}&token={token}"
+                message = _(f"Haz clic en el siguiente enlace para autenticar tu correo electrónico: {url}/authenticate/newUser?email={email}&token={token}")
             send_mail(
-                subject="Autenticación de Correo Electrónico",
+                subject=_("Autenticación de Correo Electrónico"),
                 message=message,
                 from_email="ecomodstechnology@gmail.com",
                 recipient_list=[email],
                 fail_silently=False
             )
             send_mail(
-                subject="Aviso de Intento de Autenticación de Correo Electrónico",
-                message=f"Se está intentando autentificar el correo '{email}' a través del token '{token}'",
+                subject=_("Aviso de Intento de Autenticación de Correo Electrónico"),
+                message=_(f"Se está intentando autentificar el correo '{email}' a través del token '{token}'"),
                 from_email="ecomodstechnology@gmail.com",
                 recipient_list=["diego.merino@opendeusto.es",
                                 "miguel.acha@opendeusto.es"],
@@ -149,26 +146,22 @@ def signUp(request):
 
         except SMTPException as smtp_exception:
             if isinstance(smtp_exception, SMTPAuthenticationError):
-                error_message = "Error de autenticación SMTP."
-                print(
-                    f"Detalles de error de autenticación SMTP: {smtp_exception}")
+                error_message = _("Error de autenticación SMTP.")
+                print(f"Detalles de error de autenticación SMTP: {smtp_exception}")
             elif isinstance(smtp_exception, SMTPSenderRefused):
-                error_message = "El servidor SMTP rechazó la dirección del remitente."
-                print(
-                    f"Detalles del error SMTPSenderRefused: {smtp_exception}")
+                error_message = _("El servidor SMTP rechazó la dirección del remitente.")
+                print(f"Detalles del error SMTPSenderRefused: {smtp_exception}")
             elif isinstance(smtp_exception, SMTPRecipientsRefused):
-                error_message = "El servidor SMTP rechazó una o más direcciones de correo electrónico de los destinatarios."
-                print(
-                    f"Detalles del error SMTPRecipientsRefused: {smtp_exception}")
+                error_message = _("El servidor SMTP rechazó una o más direcciones de correo electrónico de los destinatarios.")
+                print(f"Detalles del error SMTPRecipientsRefused: {smtp_exception}")
             elif isinstance(smtp_exception, ConnectionError):
-                error_message = "Error de conexión al intentar conectar con el servidor SMTP."
+                error_message = _("Error de conexión al intentar conectar con el servidor SMTP.")
                 print(f"Detalles del error ConnectionError: {smtp_exception}")
             else:
-                error_message = "Error al enviar el correo electrónico."
+                error_message = _("Error al enviar el correo electrónico.")
                 print(f"Detalles del error desconocido: {smtp_exception}")
 
             return render(request, "accounts/signUp.html", {"errorMessage": error_message})
-
 
 def authenticateUser(request):
     if request.method == "GET":
@@ -187,11 +180,9 @@ def authenticateUser(request):
             else:
                 return redirect(home)
         except User.DoesNotExist:
-            raise Http404(
-                "El usuario que estás intentando autentificar no existe")
+            raise Http404(_("El usuario que estás intentando autentificar no existe"))
         except Client.DoesNotExist:
-            raise Http404(
-                "No se ha podido autentificar tu dirección de correo electrónico")
+            raise Http404(_("No se ha podido autentificar tu dirección de correo electrónico"))
 
 @user_passes_test(isUserAuthenticated, login_url="logIn")
 def viewCart(request):
@@ -224,15 +215,15 @@ def updateProfilePicture(request):
         image_url = data.get('imageUrl')
 
         if not image_url:
-            return JsonResponse({'status': 'error', 'message': 'No se proporcionó URL de imagen'}, status=400)
+            return JsonResponse({'status': 'error', 'message': _('No se proporcionó URL de imagen')}, status=400)
 
         client = Client.objects.get(user=request.user)
         client.profile = image_url
         client.save()
 
-        return JsonResponse({'status': 'success', 'message': 'Imagen actualizada correctamente'})
+        return JsonResponse({'status': 'success', 'message': _('Imagen actualizada correctamente')})
 
-    return JsonResponse({'status': 'error', 'message': 'Método no permitido'}, status=405)
+    return JsonResponse({'status': 'error', 'message': _('Método no permitido')}, status=405)
 
 @user_passes_test(isUserAuthenticated, login_url="logIn")
 def productSelect(request):
@@ -301,9 +292,9 @@ def updateQuantity(request, cartProductId, change):
                 return JsonResponse({'status': 'success', 'newTotalPrice': totalPrice, 'newQuantity': quantity})
             return JsonResponse({'status': 'empty'})
         except CartProduct.DoesNotExist as e:
-            return JsonResponse({'status': 'error', 'message': 'Producto no encontrado'}, status=404)
+            return JsonResponse({'status': 'error', 'message': _('Producto no encontrado')}, status=404)
         except Exception as e:
-            return JsonResponse({'status': 'error', 'message': 'Error eliminando el producto del carrito'}, status=500)
+            return JsonResponse({'status': 'error', 'message': _('Error eliminando el producto del carrito')}, status=500)
 
 def removeFromCart(request, cartProductId):
     if request.method == "GET":
@@ -317,10 +308,10 @@ def removeFromCart(request, cartProductId):
             return JsonResponse({'status': 'empty'})
         except CartProduct.DoesNotExist as e:
             print("ERROR: " + str(e))
-            return JsonResponse({'status': 'error', 'message': 'Producto no encontrado'}, status=404)
+            return JsonResponse({'status': 'error', 'message': _('Producto no encontrado')}, status=404)
         except Exception as e:
             print("ERROR: " + str(e))
-            return JsonResponse({'status': 'error', 'message': 'Error eliminando el producto del carrito'}, status=500)
+            return JsonResponse({'status': 'error', 'message': _('Error eliminando el producto del carrito')}, status=500)
 
 @csrf_exempt
 def addToCart(request):

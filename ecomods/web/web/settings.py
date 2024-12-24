@@ -25,8 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = ["ecomods.pythonanywhere.com", "127.0.0.1"]
-
+ALLOWED_HOSTS = ["ecomods.pythonanywhere.com", "127.0.0.1", "0.0.0.0", "localhost"]
 
 # Application definition
 INSTALLED_APPS = [
@@ -44,14 +43,13 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.locale.LocaleMiddleware', 
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
     'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
-
 
 ROOT_URLCONF = 'web.urls'
 
@@ -118,6 +116,14 @@ USE_I18N = True
 
 USE_TZ = True
 
+LANGUAGES = [
+    ('es', 'Español'),
+    ('en', 'English'),
+]
+
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale'),
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/

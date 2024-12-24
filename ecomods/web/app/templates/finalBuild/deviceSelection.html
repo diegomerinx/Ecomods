@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
-
 {% load static %}
 {% load custom_tags %}
+{% load i18n %}
 
 {% block additionalLinks %}
 <link rel="stylesheet" href="{% static 'css/finalBuild/selection.css' %}" />
@@ -9,17 +9,17 @@
 {% endblock %}
 
 {% block title %}
-Ecomods - Selección de Dispositivos
+Ecomods - {% trans "Selección de Dispositivos" %}
 {% endblock %}
 
 {% block content %}
 <div id="stage-1" class="stage">
-  <h2 class="info">Elige el tipo de producto que desea construir</h2>
+  <h2 class="info">{% trans "Elige el tipo de producto que desea construir" %}</h2>
   <div class="selection-wrapper" id="deviceSelections">
     {% for product in products %}
-    <a class="clickableOption" id="{{product.id}}" href="{% url 'modelSelect' product.id %}">
-      <h2>{{product.type.name}}</h2>
-      <img class="deviceImage" src="{% static product.media_path %}" alt="{{product.name}}">
+    <a class="clickableOption" id="{{ product.id }}" href="{% url 'modelSelect' product.id %}">
+      <h2>{{ product.type.name }}</h2>
+      <img class="deviceImage" src="{% static product.media_path %}" alt="{{ product.name }}">
     </a>
     {% endfor %}
   </div>
