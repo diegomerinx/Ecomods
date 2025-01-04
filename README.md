@@ -221,12 +221,4 @@ Licensed under the [MIT License](LICENSE).
 
 ---
 
-## Demo Video
-
-Watch the **Ecomods Demo** to see the application in action:
-
-[![Watch Demo](assets/demo_thumbnail.png)](https://www.youtube.com/)
-
----
-
 Enjoy **Ecomods**! If you have any issues or improvements, submit a pull request or contact us.
