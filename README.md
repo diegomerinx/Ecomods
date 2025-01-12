@@ -103,7 +103,6 @@ ecomods/
         ├── settings.py
         ├── urls.py
         ├── wsgi.py
-        └── ...
 ```
 
 ---
@@ -214,11 +213,6 @@ Once the server (or Docker containers) is running:
 
 ---
 
-## Author & License
+## Author
 
-**Ecomods** is developed by [Your Name](https://github.com/diegomerinx).  
-Licensed under the [MIT License](LICENSE).
-
----
-
-Enjoy **Ecomods**! If you have any issues or improvements, submit a pull request or contact us.
+Developed by [Diego Merino](https://www.linkedin.com/in/diego-merino-marquez/). For any questions or feedback, feel free to reach out!
