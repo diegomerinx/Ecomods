@@ -210,9 +210,3 @@ Once the server (or Docker containers) is running:
    - Manage profile settings, like user info and profile images.
 
 > **Instant Demo**: Try [ecomods.pythonanywhere.com](https://ecomods.pythonanywhere.com) without any local configuration.
-
----
-
-## Author
-
-Developed by [Diego Merino](https://www.linkedin.com/in/diego-merino-marquez/). For any questions or feedback, feel free to reach out!
