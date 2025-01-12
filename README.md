@@ -88,8 +88,7 @@ ecomods/
     │   ├── migrations/
     │   ├── models.py
     │   ├── views.py
-    │   ├── pipeline.py
-    │   └── ...
+    │   └── pipeline.py
     ├── locale/
     │   ├── en/
     │   │   └── LC_MESSAGES/
@@ -102,7 +101,7 @@ ecomods/
     └── web/
         ├── settings.py
         ├── urls.py
-        ├── wsgi.py
+        └── wsgi.py
 ```
 
 ---
